@@ -1,14 +1,20 @@
 [
   {
-    "id": 111,
-    "name": "HP Laptop",
-    "price": 47000,
+    "id": 105,
+    "name": "LAPTOP",
+    "price": 75000,
     "qty": 3
   },
   {
-    "id": 105,
-    "name": "GALAXY 26 ULTRA 5G",
+    "id": 107,
+    "name": "GALAXY S 26",
     "price": 125000,
-    "qty": 5
+    "qty": 4
+  },
+  {
+    "id": 110,
+    "name": "FRIDGE",
+    "price": 50000,
+    "qty": 1
   }
 ]

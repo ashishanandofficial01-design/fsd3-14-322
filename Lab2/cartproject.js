@@ -111,9 +111,9 @@ const removeProduct = async (id) => {
   );
 };
 
-// ================= UPDATE QUANTITY =================
+// ================= UPDATE QUANTITY (+ / -) =================
 
-const updateQuantity = async (id, quantity) => {
+const updateQuantity = async (id, operation) => {
   const cart = await getCart();
 
   const product = cart.find(
@@ -125,22 +125,40 @@ const updateQuantity = async (id, quantity) => {
     return;
   }
 
-  if (quantity <= 0) {
+  if (operation === "+") {
+    product.qty += 1;
+
     console.log(
-      "\n❌ Quantity must be greater than 0."
+      `\n➕ ${product.name} quantity increased to ${product.qty}`
     );
+  } 
+  else if (operation === "-") {
+    product.qty -= 1;
+
+    if (product.qty <= 0) {
+      const index = cart.findIndex(
+        (item) => item.id === id
+      );
+
+      cart.splice(index, 1);
+
+      console.log(
+        `\n🗑️ ${product.name} removed from cart.`
+      );
+    } 
+    else {
+      console.log(
+        `\n➖ ${product.name} quantity decreased to ${product.qty}`
+      );
+    }
+  } 
+  else {
+    console.log("\n❌ Invalid operation. Use + or -.");
     return;
   }
 
-  product.qty = quantity;
-
   await saveCart(cart);
-
-  console.log(
-    `\n✅ ${product.name} quantity updated to ${quantity}.`
-  );
 };
-
 // ================= CHECKOUT =================
 
 const checkout = async () => {
@@ -261,27 +279,33 @@ const main = async () => {
       }
 
       // -------- UPDATE QUANTITY --------
-      case 4: {
-        const id = Number(
-          await cin.question(
-            "Enter product ID: "
-          )
-        );
+case 4: {
+  const id = Number(
+    await cin.question(
+      "Enter product ID: "
+    )
+  );
 
-        const quantity = Number(
-          await cin.question(
-            "Enter new quantity: "
-          )
-        );
+  if (!Number.isFinite(id)) {
+    console.log("\n❌ Invalid product ID.");
+    break;
+  }
 
-        if (!Number.isFinite(id) || !Number.isFinite(quantity)) {
-          console.log("\n❌ Invalid input.");
-          break;
-        }
+  const operation = await cin.question(
+    "Enter + to increase or - to decrease quantity: "
+  );
 
-        await updateQuantity(id, quantity);
-        break;
-      }
+  if (operation !== "+" && operation !== "-") {
+    console.log(
+      "\n❌ Please enter only + or -."
+    );
+    break;
+  }
+
+  await updateQuantity(id, operation);
+
+  break;
+}
 
       // -------- CHECKOUT --------
       case 5:
