@@ -1,0 +1,17 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "HTTP-Hyper Text Transfer Protocol\r HTML-Hyper Text Mark Language\r CSS- Cascading Style Sheet\r NPM-Note Package Manager",
+  "main": "App.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
