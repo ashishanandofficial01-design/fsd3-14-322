@@ -1,9 +1,7 @@
 import http from 'http';
 const server=http.createServer();
 server.on('request',(req,res)=>{
-    res.write("<h1>Welcome to Server Side Programming</h1>");
-    res.write("<h2>Nodemon is tracking the changes in the file and automatically restarting the server</h2>");
-    res.end();
+    res.end("<h1>Welcome to Server Side Programming</h1>");
 });
 server.listen(5000,()=>{
     console.log("Server is running");
