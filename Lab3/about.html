@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | AI Agents Directory</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #07080c;
+            --surface: #101219;
+            --surface2: #171a23;
+            --border: #292d3a;
+            --text: #f5f7fb;
+            --muted: #969dad;
+            --purple: #7c5cff;
+            --blue: #00c8ff;
+            --green: #35d07f;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 20% 0%,
+                    rgba(124, 92, 255, .18),
+                    transparent 30%
+                ),
+                var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 70px;
+            padding: 0 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(7, 8, 12, .85);
+            backdrop-filter: blur(15px);
+
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--blue)
+                );
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 950px;
+            margin: auto;
+
+            padding: 90px 25px 60px;
+
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid var(--border);
+            border-radius: 30px;
+
+            color: #c7cad3;
+
+            background: rgba(255,255,255,.03);
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            letter-spacing: -4px;
+        }
+
+        .gradient {
+            background:
+                linear-gradient(
+                    100deg,
+                    white,
+                    #947cff,
+                    #42dfff
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+
+            margin: 25px auto;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 20px 25px 90px;
+        }
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.05),
+                    rgba(255,255,255,.015)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(124,92,255,.5);
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(124,92,255,.15);
+
+            font-size: 23px;
+
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+
+            font-size: 23px;
+        }
+
+        .card p {
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        /* MISSION */
+
+        .mission {
+            margin-top: 25px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,92,255,.12),
+                    rgba(0,200,255,.05)
+                );
+        }
+
+        .mission h2 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .mission p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media(max-width: 700px) {
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✦
+        </div>
+
+        AI Agents
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="/product">
+            Home
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="badge">
+        ✦ About AI Agents Directory
+    </div>
+
+    <h1>
+
+        Making AI
+
+        <span class="gradient">
+            Easier to Discover
+        </span>
+
+    </h1>
+
+    <p>
+
+        AI Agents Directory is a platform created
+        to help people discover, explore and
+        understand the rapidly growing world
+        of AI agents.
+
+    </p>
+
+</section>
+
+
+
+<!-- CONTENT -->
+
+<main class="container">
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🔎
+            </div>
+
+            <h2>
+                Discover
+            </h2>
+
+            <p>
+
+                Find AI agents for coding, research,
+                productivity, automation, business,
+                browser tasks and many other use cases.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h2>
+                Compare
+            </h2>
+
+            <p>
+
+                Explore different AI agents and
+                understand what they are designed
+                to do, who created them and what
+                capabilities they provide.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🧠
+            </div>
+
+            <h2>
+                Learn
+            </h2>
+
+            <p>
+
+                AI agents are changing the way
+                software, research and digital
+                workflows are performed. We want
+                to make this technology easier to
+                understand.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>
+                Explore the Ecosystem
+            </h2>
+
+            <p>
+
+                The AI ecosystem is developing
+                rapidly. Our directory brings
+                different categories of agents
+                together in one place.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- MISSION -->
+
+    <section class="mission">
+
+        <h2>
+            Our Mission
+        </h2>
+
+        <p>
+
+            Our mission is simple: make the rapidly
+            growing AI-agent ecosystem easier to
+            navigate. Instead of searching through
+            dozens of websites, users can explore
+            different types of AI agents from one
+            place.
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <strong>
+        AI Agents Directory
+    </strong>
+
+    <br><br>
+
+    Discover • Explore • Build with AI
+
+</footer>
+
+
+</body>
+</html>

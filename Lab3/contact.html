@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Contact Us | AI Agents Directory
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+
+            --bg: #07080c;
+
+            --surface: #101219;
+
+            --surface2: #171a23;
+
+            --border: #292d3a;
+
+            --text: #f5f7fb;
+
+            --muted: #969dad;
+
+            --purple: #7c5cff;
+
+            --blue: #00c8ff;
+
+            --green: #35d07f;
+
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 0%,
+                    rgba(124,92,255,.18),
+                    transparent 30%
+                ),
+
+                var(--bg);
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+        }
+
+
+        /* NAVBAR */
+
+        nav {
+
+            height: 70px;
+
+            padding: 0 7%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            background:
+                rgba(7,8,12,.85);
+
+            backdrop-filter:
+                blur(15px);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 10;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+
+        .logo-icon {
+
+            width: 36px;
+
+            height: 36px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--blue)
+                );
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 28px;
+
+        }
+
+
+        .nav-links a {
+
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+        }
+
+
+        /* HERO */
+
+        .hero {
+
+            text-align: center;
+
+            padding:
+                85px
+                25px
+                50px;
+
+        }
+
+
+        .badge {
+
+            display: inline-block;
+
+            padding:
+                8px
+                15px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 30px;
+
+            color: #c7cad3;
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    75px
+                );
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .gradient {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    white,
+                    #947cff,
+                    #42dfff
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            margin:
+                25px
+                auto;
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+        }
+
+
+        /* CONTACT AREA */
+
+        .contact-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                20px
+                25px
+                90px;
+
+            display: grid;
+
+            grid-template-columns:
+                .8fr
+                1.2fr;
+
+            gap: 25px;
+
+        }
+
+
+        /* LEFT */
+
+        .contact-info {
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.05),
+                    rgba(255,255,255,.015)
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+        }
+
+
+        .contact-info h2 {
+
+            font-size: 27px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .contact-info > p {
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .info-item {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .info-icon {
+
+            width: 43px;
+
+            height: 43px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(124,92,255,.14);
+
+        }
+
+
+        .info-item h3 {
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .info-item p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        /* FORM */
+
+        .contact-form {
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.05),
+                    rgba(255,255,255,.015)
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+        }
+
+
+        .contact-form h2 {
+
+            margin-bottom: 25px;
+
+            font-size: 27px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            font-size: 13px;
+
+            margin-bottom: 8px;
+
+            color: #d7dae2;
+
+        }
+
+
+        input,
+        textarea,
+        select {
+
+            width: 100%;
+
+            padding:
+                14px
+                15px;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 9px;
+
+            color: white;
+
+            outline: none;
+
+            font-family: inherit;
+
+        }
+
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+
+            border-color:
+                var(--purple);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(124,92,255,.10);
+
+        }
+
+
+        textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+
+        }
+
+
+        button {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--purple),
+                    #6849e9
+                );
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(124,92,255,.25);
+
+        }
+
+
+        #success {
+
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            background:
+                rgba(53,208,127,.10);
+
+            border:
+                1px solid
+                rgba(53,208,127,.25);
+
+            color:
+                #65e99b;
+
+            font-size: 13px;
+
+            text-align: center;
+
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            border-top:
+                1px solid
+                var(--border);
+
+            padding:
+                35px
+                20px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        footer strong {
+
+            color: white;
+
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width: 750px) {
+
+            .contact-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .nav-links {
+
+                gap: 12px;
+
+            }
+
+            .hero h1 {
+
+                letter-spacing: -2px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✦
+        </div>
+
+        AI Agents
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="/product">
+            Home
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="badge">
+        ✉ Get in Touch
+    </div>
+
+
+    <h1>
+
+        Let's
+
+        <span class="gradient">
+            Connect
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        Have a suggestion, found an AI agent
+        that should be listed, or want to
+        collaborate with us?
+
+        We'd love to hear from you.
+
+    </p>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<main class="contact-container">
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <section class="contact-info">
+
+        <h2>
+            Contact Information
+        </h2>
+
+
+        <p>
+
+            Reach out to us for suggestions,
+            feedback, corrections, partnerships
+            or general questions about the
+            AI Agents Directory.
+
+        </p>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                ✉
+            </div>
+
+            <div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    hello@aiagentsdirectory.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Suggestions
+                </h3>
+
+                <p>
+                    Recommend an AI agent
+                    for our directory.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                🤝
+            </div>
+
+            <div>
+
+                <h3>
+                    Partnerships
+                </h3>
+
+                <p>
+                    Interested in working
+                    together? Contact us.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FORM -->
+
+    <section class="contact-form">
+
+        <h2>
+            Send us a Message
+        </h2>
+
+
+        <form id="contactForm">
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Subject
+                </label>
+
+                <select name="subject">
+
+                    <option>
+                        General Question
+                    </option>
+
+                    <option>
+                        Suggest an AI Agent
+                    </option>
+
+                    <option>
+                        Report Incorrect Information
+                    </option>
+
+                    <option>
+                        Partnership
+                    </option>
+
+                    <option>
+                        Feedback
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <button type="submit">
+
+                Send Message →
+
+            </button>
+
+
+            <div id="success">
+
+                ✓ Your message has been submitted.
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>
+        AI Agents Directory
+    </strong>
+
+    <br><br>
+
+    Discover • Explore • Build with AI
+
+</footer>
+
+
+
+<script>
+
+    const form =
+        document.getElementById("contactForm");
+
+    const success =
+        document.getElementById("success");
+
+
+    form.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            success.style.display = "block";
+
+            form.reset();
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
