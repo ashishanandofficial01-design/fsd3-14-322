@@ -19,3 +19,11 @@ API GENERALLY START WITH API/VERSION
 /api/v1/products?s=nobile
 by default browser can check only get request
 to check other three request types loke post,put,patch and delete we required frontend or third party api tester like postman/thunderclient/echo API
+
+
+
+
+Content-Type is an HTTP response header that tells client what type of data is being sent by the server.
+text/html → HTML webpage
+text/plain → Plain text
+application/json → JSON data
