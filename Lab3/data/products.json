@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "brand": "Apple",
+    "model": "iPhone 17 Pro",
+    "price_inr": 134900,
+    "storage": "256GB",
+    "ram": "12GB",
+    "display": "6.3-inch OLED",
+    "camera": "48MP + 48MP + 48MP",
+    "battery": "4000mAh",
+    "os": "iOS"
+  },
+  {
+    "id": 2,
+    "brand": "Samsung",
+    "model": "Galaxy S26 Ultra",
+    "price_inr": 139999,
+    "storage": "256GB",
+    "ram": "12GB",
+    "display": "6.9-inch AMOLED",
+    "camera": "200MP + 50MP + 50MP + 10MP",
+    "battery": "5000mAh",
+    "os": "Android"
+  },
+  {
+    "id": 3,
+    "brand": "Google",
+    "model": "Pixel 10 Pro",
+    "price_inr": 109999,
+    "storage": "256GB",
+    "ram": "16GB",
+    "display": "6.3-inch OLED",
+    "camera": "50MP + 48MP + 48MP",
+    "battery": "4870mAh",
+    "os": "Android"
+  },
+  {
+    "id": 4,
+    "brand": "OnePlus",
+    "model": "OnePlus 13",
+    "price_inr": 69999,
+    "storage": "256GB",
+    "ram": "12GB",
+    "display": "6.82-inch AMOLED",
+    "camera": "50MP + 50MP + 50MP",
+    "battery": "6000mAh",
+    "os": "Android"
+  },
+  {
+    "id": 5,
+    "brand": "Xiaomi",
+    "model": "Xiaomi 15",
+    "price_inr": 64999,
+    "storage": "512GB",
+    "ram": "12GB",
+    "display": "6.36-inch AMOLED",
+    "camera": "50MP + 50MP + 50MP",
+    "battery": "5240mAh",
+    "os": "Android"
+  },
+  {
+    "id": 6,
+    "brand": "Nothing",
+    "model": "Nothing Phone (3)",
+    "price_inr": 79999,
+    "storage": "256GB",
+    "ram": "12GB",
+    "display": "6.67-inch OLED",
+    "camera": "50MP + 50MP + 50MP",
+    "battery": "5150mAh",
+    "os": "Android"
+  },
+  {
+    "id": 7,
+    "brand": "Vivo",
+    "model": "Vivo X200 Pro",
+    "price_inr": 94999,
+    "storage": "512GB",
+    "ram": "16GB",
+    "display": "6.78-inch AMOLED",
+    "camera": "50MP + 50MP + 200MP",
+    "battery": "6000mAh",
+    "os": "Android"
+  },
+  {
+    "id": 8,
+    "brand": "OPPO",
+    "model": "Find X8 Pro",
+    "price_inr": 99999,
+    "storage": "512GB",
+    "ram": "16GB",
+    "display": "6.78-inch AMOLED",
+    "camera": "50MP + 50MP + 50MP + 50MP",
+    "battery": "5910mAh",
+    "os": "Android"
+  },
+  {
+    "id": 9,
+    "brand": "Motorola",
+    "model": "Edge 60 Pro",
+    "price_inr": 29999,
+    "storage": "256GB",
+    "ram": "8GB",
+    "display": "6.7-inch pOLED",
+    "camera": "50MP + 50MP + 10MP",
+    "battery": "6000mAh",
+    "os": "Android"
+  },
+  {
+    "id": 10,
+    "brand": "Realme",
+    "model": "GT 7 Pro",
+    "price_inr": 59999,
+    "storage": "256GB",
+    "ram": "12GB",
+    "display": "6.78-inch AMOLED",
+    "camera": "50MP + 50MP + 8MP",
+    "battery": "5800mAh",
+    "os": "Android"
+  }
+]
