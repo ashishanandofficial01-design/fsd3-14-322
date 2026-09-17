@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | WAVEN</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080b12;
+    color:#fff;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(8,11,18,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #1c2432;
+}
+
+nav{
+    max-width:1200px;
+    height:75px;
+    margin:auto;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#00e5ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#b9c1cf;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#00e5ff;
+}
+
+.nav-button{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid #00e5ff;
+    padding:10px 18px;
+    border-radius:25px;
+}
+
+/* HERO */
+
+.page-hero{
+    min-height:65vh;
+    padding:150px 20px 80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,#003541,transparent 45%),
+        #080b12;
+}
+
+.page-hero small{
+    color:#00e5ff;
+    letter-spacing:4px;
+}
+
+.page-hero h1{
+    font-size:clamp(48px,7vw,75px);
+    margin:20px 0;
+}
+
+.page-hero h1 span{
+    color:#00e5ff;
+}
+
+.page-hero p{
+    max-width:650px;
+    color:#929dad;
+    font-size:18px;
+    line-height:1.7;
+    margin:auto;
+}
+
+/* ABOUT */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 25px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.visual{
+    height:450px;
+    border:1px solid #243140;
+    border-radius:20px;
+    background:
+        radial-gradient(circle,#123d49,#0b1018 65%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.visual:before{
+    content:"W";
+    font-size:280px;
+    font-weight:900;
+    color:#00e5ff;
+    opacity:.07;
+}
+
+.visual-circle{
+    position:absolute;
+    width:250px;
+    height:250px;
+    border:1px solid #00e5ff;
+    border-radius:50%;
+}
+
+.about-text small{
+    color:#00e5ff;
+    letter-spacing:3px;
+}
+
+.about-text h2{
+    font-size:42px;
+    margin:15px 0 25px;
+}
+
+.about-text h2 span{
+    color:#00e5ff;
+}
+
+.about-text p{
+    color:#929dad;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+/* VALUES */
+
+.values{
+    background:#0e131d;
+    border-top:1px solid #202a39;
+    border-bottom:1px solid #202a39;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.heading small{
+    color:#00e5ff;
+    letter-spacing:3px;
+}
+
+.heading h2{
+    font-size:42px;
+    margin:12px 0;
+}
+
+.heading p{
+    color:#8d98a8;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.value{
+    padding:35px;
+    background:#080b12;
+    border:1px solid #202a39;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.value:hover{
+    border-color:#00e5ff;
+    transform:translateY(-6px);
+}
+
+.value-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.value h3{
+    margin-bottom:12px;
+}
+
+.value p{
+    color:#7f8998;
+    line-height:1.7;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline-item{
+    border-left:2px solid #00e5ff;
+    padding:0 0 45px 35px;
+    position:relative;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-7px;
+    top:0;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#00e5ff;
+}
+
+.timeline-item h3{
+    color:#00e5ff;
+    margin-bottom:8px;
+}
+
+.timeline-item h2{
+    margin-bottom:10px;
+}
+
+.timeline-item p{
+    color:#7f8998;
+    line-height:1.7;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:90px 20px;
+    background:#0e131d;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#8d98a8;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#00e5ff;
+    color:#080b12;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#05070b;
+    padding:60px 8% 25px;
+    border-top:1px solid #1c2432;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:45px;
+}
+
+footer h3{
+    margin-bottom:18px;
+}
+
+footer p,
+footer a{
+    color:#7f8998;
+    text-decoration:none;
+    line-height:1.7;
+}
+
+footer a:hover{
+    color:#00e5ff;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:9px;
+}
+
+.copyright{
+    max-width:1200px;
+    margin:auto;
+    padding-top:20px;
+    border-top:1px solid #1c2432;
+    text-align:center;
+    color:#596273;
+    font-size:13px;
+}
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .nav-button{
+        display:none;
+    }
+
+    .visual{
+        height:300px;
+    }
+
+    .about-text h2{
+        font-size:34px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+
+    <div class="logo">
+        WAV<span>EN</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+
+    <a href="enquiry.html" class="nav-button">
+        Contact
+    </a>
+
+</nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+    <div>
+
+        <small>OUR STORY</small>
+
+        <h1>
+            We believe in<br>
+            <span>wireless freedom.</span>
+        </h1>
+
+        <p>
+            WAVEN is built around one simple idea:
+            technology should connect people without getting
+            in their way.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section">
+
+    <div class="about-grid">
+
+        <div class="visual">
+            <div class="visual-circle"></div>
+        </div>
+
+        <div class="about-text">
+
+            <small>ABOUT WAVEN</small>
+
+            <h2>
+                Technology without
+                <span>boundaries.</span>
+            </h2>
+
+            <p>
+                WAVEN is a wireless technology brand focused on
+                creating devices that fit naturally into modern life.
+            </p>
+
+            <p>
+                From immersive audio to smart wearables and
+                connected accessories, our products are designed
+                around simplicity, functionality and freedom.
+            </p>
+
+            <p>
+                We combine thoughtful design with modern wireless
+                technology to create experiences that feel effortless.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VALUES -->
+
+<section class="values">
+
+<div class="section">
+
+    <div class="heading">
+
+        <small>OUR PRINCIPLES</small>
+
+        <h2>What Drives Us</h2>
+
+        <p>
+            Three principles behind everything we create.
+        </p>
+
+    </div>
+
+
+    <div class="value-grid">
+
+        <div class="value">
+
+            <div class="value-icon">⚡</div>
+
+            <h3>Innovation</h3>
+
+            <p>
+                We continuously explore new technologies
+                to make wireless experiences smarter and simpler.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">◈</div>
+
+            <h3>Design</h3>
+
+            <p>
+                Every product is designed to balance
+                functionality, comfort and modern aesthetics.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">∞</div>
+
+            <h3>Connection</h3>
+
+            <p>
+                Our goal is to make connecting with
+                technology feel natural and effortless.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section class="section">
+
+    <div class="heading">
+
+        <small>OUR JOURNEY</small>
+
+        <h2>From Idea to Connection</h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>01 — THE IDEA</h3>
+
+            <h2>A simpler connected world</h2>
+
+            <p>
+                WAVEN began with a simple vision:
+                make wireless technology more accessible
+                and enjoyable.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>02 — BUILD</h3>
+
+            <h2>Designing the ecosystem</h2>
+
+            <p>
+                We started developing products focused
+                on everyday audio, wearables and connectivity.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>03 — TODAY</h3>
+
+            <h2>Growing the wireless experience</h2>
+
+            <p>
+                Today, WAVEN continues to explore new
+                possibilities across the wireless technology space.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>Want to connect with us?</h2>
+
+    <p>
+        Have a question, idea or business enquiry?
+    </p>
+
+    <a href="enquiry.html" class="btn">
+        Send an Enquiry
+    </a>
+
+</section>
+
+
+<footer>
+
+<div class="footer-grid">
+
+    <div>
+        <h3>WAVEN</h3>
+        <p>
+            Building a more connected world through
+            simple and intelligent wireless technology.
+        </p>
+    </div>
+
+    <div>
+        <h3>Explore</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#categories">Categories</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Company</h3>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Support</h3>
+        <ul>
+            <li><a href="enquiry.html">Contact</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Help Center</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 WAVEN Technologies. All rights reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
