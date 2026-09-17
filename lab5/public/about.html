@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | WaveTech</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #151515;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #4169e1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #4169e1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: linear-gradient(135deg, #eef3ff, #ffffff);
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .page-hero small {
+            color: #4169e1;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .page-hero h1 {
+            font-size: 52px;
+            margin: 15px 0;
+        }
+
+        .page-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 400px;
+            background: #e5ebff;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 130px;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: #4169e1;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* MISSION */
+        .mission-section {
+            padding: 80px 8%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .mission-card {
+            background: #f7f8fc;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .mission-icon {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .mission-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* STATS */
+        .stats {
+            padding: 65px 8%;
+            background: #111827;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+            color: #aeb4c0;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #4169e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #3154c7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b0f19;
+            color: white;
+            padding: 50px 8% 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #9ca3af;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #252b38;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 40px;
+            }
+
+            .about {
+                padding: 60px 5%;
+            }
+
+            .about-image {
+                height: 280px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+    <div class="logo">
+        Wave<span>Tech</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+        <button class="nav-btn">🔍</button>
+        <button class="nav-btn">🛒</button>
+    </div>
+</nav>
+
+<a href="enquiry.html" class="cta-btn">
+    Send an Enquiry
+</a>
+
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+
+        <small>WHO WE ARE</small>
+
+        <h1>About WaveTech</h1>
+
+        <p>
+            We are passionate about making wireless technology
+            simple, accessible and exciting for everyone.
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about">
+
+        <div class="about-image">
+            📡
+        </div>
+
+        <div class="about-content">
+
+            <h2>
+                Connecting the world,
+                <span>wirelessly.</span>
+            </h2>
+
+            <p>
+                WaveTech is a modern wireless technology company
+                focused on providing innovative wireless devices
+                for everyday life.
+            </p>
+
+            <p>
+                From headphones and smart watches to Bluetooth
+                speakers and gaming accessories, our goal is to
+                bring reliable technology and great design together.
+            </p>
+
+            <p>
+                We believe technology should be easy to use,
+                dependable and accessible to everyone.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION -->
+    <section class="mission-section">
+
+        <div class="section-title">
+
+            <h2>What We Believe</h2>
+
+            <p>
+                Our values guide everything we build and deliver.
+            </p>
+
+        </div>
+
+        <div class="mission-cards">
+
+            <div class="mission-card">
+
+                <div class="mission-icon">💡</div>
+
+                <h3>Innovation</h3>
+
+                <p>
+                    We continuously explore new ideas and
+                    technologies to create better experiences.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">🛡️</div>
+
+                <h3>Reliability</h3>
+
+                <p>
+                    We focus on dependable products designed
+                    for everyday use.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">❤️</div>
+
+                <h3>Customer First</h3>
+
+                <p>
+                    Our customers are at the center of everything
+                    we design and deliver.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat">
+            <h2>50K+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="stat">
+            <h2>100+</h2>
+            <p>Wireless Products</p>
+        </div>
+
+        <div class="stat">
+            <h2>25+</h2>
+            <p>Technology Partners</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>Customer Support</p>
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Have a question?</h2>
+
+        <p>
+            Our team would love to hear from you.
+        </p>
+
+        <a href="enquiry.html" class="cta-btn">
+            Send an Enquiry
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>WaveTech</h3>
+
+                <p>
+                    Bringing smarter wireless technology into
+                    everyday life.
+                </p>
+            </div>
+
+            <div>
+                <h3>Products</h3>
+
+                <ul>
+                    <li><a href="index.html#products">Headphones</a></li>
+                    <li><a href="index.html#products">Smart Watches</a></li>
+                    <li><a href="index.html#products">Speakers</a></li>
+                    <li><a href="index.html#products">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="enquiry.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Warranty</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 WaveTech. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>

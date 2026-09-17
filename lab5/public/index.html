@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveTech — Wireless Devices</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #151515;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            height: 75px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .logo span {
+            color: #4169e1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4169e1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #eef3ff, #ffffff);
+        }
+
+        .hero-text {
+            max-width: 580px;
+        }
+
+        .hero-text small {
+            color: #4169e1;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            line-height: 1.05;
+            margin: 18px 0;
+        }
+
+        .hero-text h1 span {
+            color: #4169e1;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn {
+            padding: 15px 28px;
+            background: #4169e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            background: #3154c7;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            padding: 15px 28px;
+            background: white;
+            color: #222;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* HERO DEVICE */
+        .device-container {
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            background: #e0e8ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .headphone {
+            width: 280px;
+            height: 280px;
+            border: 35px solid #222;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .headphone::before,
+        .headphone::after {
+            content: "";
+            position: absolute;
+            width: 65px;
+            height: 100px;
+            background: #222;
+            border-radius: 30px;
+            top: 135px;
+        }
+
+        .headphone::before {
+            left: -65px;
+        }
+
+        .headphone::after {
+            right: -65px;
+        }
+
+        /* CATEGORIES */
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-7px);
+        }
+
+        .category-icon {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .category h3 {
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+        }
+
+        .product-image {
+            height: 240px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            border: none;
+            background: #4169e1;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* FEATURES */
+        .features {
+            background: #111827;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 60px 8%;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            color: #aeb4c0;
+            margin-top: 8px;
+        }
+
+        /* NEWSLETTER */
+        .newsletter {
+            padding: 80px 8%;
+            text-align: center;
+            background: white;
+        }
+
+        .newsletter h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .newsletter p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 15px 25px;
+            border: none;
+            background: #4169e1;
+            color: white;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b0f19;
+            color: white;
+            padding: 50px 8% 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #9ca3af;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #252b38;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .device-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .headphone {
+                width: 190px;
+                height: 190px;
+                border-width: 25px;
+            }
+
+            .categories,
+            .products,
+            .features,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+    <div class="logo">
+        Wave<span>Tech</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+        <button class="nav-btn">🔍</button>
+        <button class="nav-btn">🛒</button>
+    </div>
+</nav>
+
+<a href="enquiry.html" class="secondary-btn">
+    Contact Us
+</a>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <small>THE FUTURE OF CONNECTIVITY</small>
+
+            <h1>
+                Wireless technology.
+                <span>Without limits.</span>
+            </h1>
+
+            <p>
+                Discover next-generation wireless devices designed
+                for smarter living, better entertainment and seamless
+                connectivity.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="primary-btn">
+                    Explore Products
+                </a>
+
+                <a href="#categories" class="secondary-btn">
+                    View Categories
+                </a>
+            </div>
+        </div>
+
+        <div class="device-container">
+            <div class="headphone"></div>
+        </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+        <div class="section-title">
+            <h2>Shop by Category</h2>
+            <p>Find the perfect wireless device for your lifestyle.</p>
+        </div>
+
+        <div class="categories">
+
+            <div class="category">
+                <div class="category-icon">🎧</div>
+                <h3>Headphones</h3>
+                <p>Immersive wireless audio.</p>
+            </div>
+
+            <div class="category">
+                <div class="category-icon">⌚</div>
+                <h3>Smart Watches</h3>
+                <p>Smart technology on your wrist.</p>
+            </div>
+
+            <div class="category">
+                <div class="category-icon">🔊</div>
+                <h3>Speakers</h3>
+                <p>Powerful sound anywhere.</p>
+            </div>
+
+            <div class="category">
+                <div class="category-icon">📱</div>
+                <h3>Accessories</h3>
+                <p>Wireless accessories and gadgets.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+
+        <div class="section-title">
+            <h2>Featured Devices</h2>
+            <p>Explore our latest wireless technology.</p>
+        </div>
+
+        <div class="products">
+
+            <div class="product">
+                <div class="product-image">🎧</div>
+
+                <div class="product-info">
+                    <h3>AirWave Pro</h3>
+                    <p>Active noise cancellation headphones.</p>
+
+                    <div class="product-bottom">
+                        <span class="price">₹7,999</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">⌚</div>
+
+                <div class="product-info">
+                    <h3>Pulse Watch X</h3>
+                    <p>Smart fitness and lifestyle watch.</p>
+
+                    <div class="product-bottom">
+                        <span class="price">₹4,999</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">🔊</div>
+
+                <div class="product-info">
+                    <h3>Boom Mini</h3>
+                    <p>Portable Bluetooth wireless speaker.</p>
+
+                    <div class="product-bottom">
+                        <span class="price">₹2,499</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">🎮</div>
+
+                <div class="product-info">
+                    <h3>GameLink</h3>
+                    <p>Low-latency wireless gaming controller.</p>
+
+                    <div class="product-bottom">
+                        <span class="price">₹3,499</span>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable shipping.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Shopping</h3>
+            <p>Your information stays protected.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">↩️</div>
+            <h3>Easy Returns</h3>
+            <p>Simple and hassle-free returns.</p>
+        </div>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+        <h2>Stay Connected</h2>
+
+        <p>
+            Subscribe to receive product launches, offers and
+            wireless technology updates.
+        </p>
+
+        <form class="newsletter-form">
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>WaveTech</h3>
+
+                <p>
+                    Bringing smarter wireless technology into
+                    everyday life.
+                </p>
+            </div>
+
+            <div>
+                <h3>Products</h3>
+
+                <ul>
+                    <li><a href="#">Headphones</a></li>
+                    <li><a href="#">Smart Watches</a></li>
+                    <li><a href="#">Speakers</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Warranty</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 WaveTech. All rights reserved.
+        </div>
+
+    </footer>
+
+    <script>
+        // Simple Buy Now interaction
+        const buttons = document.querySelectorAll(".buy-btn");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                alert("Product added to cart!");
+            });
+        });
+
+        // Newsletter
+        document.querySelector(".newsletter-form")
+            .addEventListener("submit", function(e) {
+                e.preventDefault();
+                alert("Thanks for subscribing!");
+                this.reset();
+            });
+    </script>
+
+</body>
+</html>
+
