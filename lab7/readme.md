@@ -16,4 +16,14 @@
     d. select variant as javascript from arrow key
     e. select esList for linting from arrow key
     f. select install and start the frontend
+
+
+
+    # COMPONENTS
+
+    1. simple js function return html directory
+    2. it must start with capital letters
+    3. it should be treated as html tag
+    4. it must be closed
+    
    
