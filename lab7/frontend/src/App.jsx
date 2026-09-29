@@ -5,17 +5,18 @@ const b1 = {
   quantity: 10,
   rating: 5.0,
 };
+
 const b2 = {
   picUrl: "https://m.media-amazon.com/images/I/61aYZnnMaHL._AC_UY327_FMwebp_QL65_.jpg",
   bname: "The Road to React",
   price: 2199,
-  quantity: 05,
+  quantity: 5,
   rating: 5.0,
 };
 
 function Book(props) {
   console.log(props);
-  
+
   return (
     <div>
       <img
