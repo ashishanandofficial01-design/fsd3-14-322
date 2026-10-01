@@ -26,4 +26,21 @@
     3. it should be treated as html tag
     4. it must be closed
     
-   
+   # OBJECT DESTRUCTOR
+   ```
+   const{rating,bname,price,quantity,picUrl}=props.book;
+   ```
+
+   DOES not depend on order,if property is not available then it initialized with null
+   any components include style 
+   1. external css = create class in index.css and use in component 
+   2. internal css = create property as object like
+   const qtyStyle = {
+    fontsize: "1rem",
+    color: "blue",
+    textAlign: "center",
+    backgroundColor: "yellow",
+    padding: "10px",
+  }; 
+   then apply with style attribute and pass the object
+   3. INLINE CSS in this method we use two curly brackets with style attribute all the css property must be single word for example text-align becomestextAlign becomes camel text
