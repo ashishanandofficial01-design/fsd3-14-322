@@ -1,3 +1,4 @@
+import Book from "./components/Book";
 const b1 = {
   picUrl:
     "https://m.media-amazon.com/images/I/61aYZnnMaHL._AC_UY327_FMwebp_QL65_.jpg",
@@ -15,17 +16,6 @@ const b2 = {
   quantity: 5,
   rating: 5.0,
 };
-  return (
-    <div>
-      <img src={picUrl} alt={bname} />
-      <h1>{bname}</h1>
-      <h2>Price: {price}</h2>
-      <h3>Quantity: {quantity}</h3>
-      <h4 style={{ color: "red", textAlign: "center" }}>Rating: {rating}</h4>
-    </div>
-  );
-}
-
 export default function App() {
   return (
     <>
