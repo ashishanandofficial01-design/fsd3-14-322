@@ -1,18 +1,13 @@
-export default function Pen(props) {
-  const { pname, price, quantity, picUrl,company } = props.pen;
-  const qtyStyle = {
-    fontsize: "1rem",
-    color: "blue",
-    textAlign: "center",
-    backgroundColor: "yellow",
-    padding: "10px",
-  };
-    return (
-      <div>
-        <img src={picUrl} alt={pname} />
-        <h1>{pname}</h1>
-        <h2>Price: {price}</h2>
-        <h3>Quantity: {quantity}</h3>
-        <h3>Company: {company}</h3>
-      </div>
-    );
+const Pen = ({ pen }) => {
+  const { picUrl, company, price } = pen;
+
+  return (
+    <div>
+      <img src={picUrl} alt={company} />
+      <h3>{company}</h3>
+      <h4>Rs. {price}</h4>
+    </div>
+  );
+};
+
+export default Pen;

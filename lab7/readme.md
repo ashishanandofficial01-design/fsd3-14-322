@@ -44,3 +44,7 @@
   }; 
    then apply with style attribute and pass the object
    3. INLINE CSS in this method we use two curly brackets with style attribute all the css property must be single word for example text-align becomestextAlign becomes camel text
+
+
+rafce-arrowsunction
+rfce-simple function
