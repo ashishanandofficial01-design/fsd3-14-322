@@ -48,3 +48,7 @@
 
 rafce-arrowsunction
 rfce-simple function
+
+# App.jsx should be minimum code
+
+# Bydefault in html button is submit button
